@@ -11,5 +11,5 @@ jobs:
         uses: alagos/regex-merge@node16
         with:
           accessToken: ${{ secrets.GITHUB_TOKEN }}
-          headBranch: master
+          headBranch: main
           branchRegex: '^(release|staging)\/.+'
