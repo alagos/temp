@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Merge master to release/.+
-        uses: visfleet/regex-merge@node16
+        uses: alagos/regex-merge@node16
         with:
           accessToken: ${{ secrets.GITHUB_TOKEN }}
           headBranch: master
