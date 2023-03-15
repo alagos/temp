@@ -1,15 +1,16 @@
-name: Auto merging from master to release branches
+name: Auto merging from main to release branches
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   multimerge:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - name: Merge master to release/.+
-        uses: visfleet/regex-merge@node16
+      - name: Merge main to release/.+
+        uses: alagos/regex-merge@node16
         with:
           accessToken: ${{ secrets.GITHUB_TOKEN }}
-          headBranch: master
+          headBranch: main
           branchRegex: '^(release|staging)\/.+'
