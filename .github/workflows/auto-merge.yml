@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   multimerge:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Merge main to release/.+
