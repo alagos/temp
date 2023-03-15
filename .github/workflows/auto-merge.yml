@@ -1,0 +1,15 @@
+name: Auto merging from master to release branches
+on:
+  push:
+    branches:
+      - master
+jobs:
+  multimerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge master to release/.+
+        uses: visfleet/regex-merge@node16
+        with:
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
+          headBranch: master
+          branchRegex: '^(release|staging)\/.+'
